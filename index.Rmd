@@ -16,6 +16,7 @@ output:
 ```{r setup, include=FALSE}
 # knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
+library(ggformula)
 ```
 
 # Pre-test
@@ -343,6 +344,42 @@ rationality.
 6. The probability of replicating is 1 - _p_
 
 
+## One more for fun
+
+```{r, echo = FALSE}
+gf_dist("norm") %>% 
+  gf_vline(xintercept = ~2.5)
+```
+
+## One more for fun
+
+```{r, echo = FALSE}
+gf_dist("norm") %>% 
+  gf_vline(xintercept = ~2.5) %>% 
+  gf_dist("norm", color = "blue", params = list(2.5, 1))
+```
+
+## One more for fun
+
+```{r, echo = FALSE}
+gf_dist("norm") %>% 
+  gf_vline(xintercept = ~2.5) %>% 
+  gf_dist("norm", color = "red", params = list(1, 1))
+```
+
+## One more for fun
+
+```{r, echo = FALSE}
+gf_dist("norm") %>% 
+  gf_vline(xintercept = ~2.5) %>% 
+  gf_dist("norm", color = "green", params = list(10, 1))
+```
+
+
+
+# Not Limited to Psychology
+
+
 ## Delusion about significance among medical doctors and researchers
 ### Asked of 246 physicians at 3 major academic universities (BJH, B&W, MassGen)
 
@@ -445,3 +482,7 @@ were significant | 58% | 72% |
 
 
 # Most importantly: use __common sense__ and __sound judgment__, not rituals
+
+---
+
+![](figures/frequentists_vs_bayesians.png)
